@@ -6,17 +6,26 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "format": "prettier --write src",
+    "lint": "eslint src --ext .jsx,.js,.tsx,.ts --no-error-on-unmatched-pattern --fix && stylelint --fix **/*.{scss,css} --allow-empty-input"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "mobx": "^6.13.0",
+    "mobx-react-lite": "^4.0.7",
+    "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.5"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@it-incubator/eslint-config": "^1.0.3",
+    "@it-incubator/prettier-config": "^0.1.2",
+    "@it-incubator/stylelint-config": "^2.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
-    "@types/react-dom": "^18"
+    "@types/react-dom": "^18",
+    "stylelint": "^16.7.0",
+    "typescript": "^5"
   }
 }
