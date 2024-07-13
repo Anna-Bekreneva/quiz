@@ -1,26 +1,29 @@
+'use client'
 import { ComponentPropsWithoutRef, ReactNode } from 'react'
 
 import { HeadMeta } from '@/shared/lib/seo/head-meta'
+import { pageWrapperStyles } from '@/widgets/page-wrapper/ui/styles'
 
 type Props = {
   children: ReactNode
-  className?: string
   description?: string
   favicon?: string
+  maxWidth?: string
   title?: string
-} & ComponentPropsWithoutRef<'div'>
+} & ComponentPropsWithoutRef<'section'>
+
 export const PageWrapper = ({
   children,
-  className,
   description,
   favicon,
+  maxWidth,
   title,
   ...rest
 }: Props) => {
   return (
-    <div className={className} {...rest}>
+    <section css={pageWrapperStyles(maxWidth)} {...rest}>
       <HeadMeta description={description} favicon={favicon} title={title} />
       {children}
-    </div>
+    </section>
   )
 }
