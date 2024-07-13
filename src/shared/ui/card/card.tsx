@@ -14,6 +14,7 @@ const CardPolymorph = <T extends ElementType = 'div'>(
 ) => {
   const { as: Tag = 'div', ...rest } = props
 
+  // @ts-expect-error TS2322
   return <Tag css={cardStyle} ref={ref} {...rest} />
 }
 

@@ -36,7 +36,7 @@ class categoriesStore {
       }
     } catch (e) {
       runInAction(() => {
-        this.error = e.message ?? 'Something error'
+        this.error = (e as Error).message ?? 'Something error'
         this.isLoading = false
       })
     }
